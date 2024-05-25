@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import backend.api.models.Users.User;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
 @Entity
@@ -17,16 +17,16 @@ public class Recipe
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "Active", nullable = false)
-    private Boolean Active = true;
+    private Boolean active = true;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "RecipeAccess", nullable = false)
-    private RecipeAccess RecipeAccess;
+    private RecipeAccess recipeAccess;
 
     @ManyToOne
     @JoinColumn(name = "AuthorId", nullable = false)
-    private User User;
+    private User user;
 }

@@ -15,27 +15,27 @@ import lombok.AllArgsConstructor;
 public class RecipeInfo
 {
     @Id
-    private Integer RecipeId;
+    private Integer recipeId;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id")
     @MapsId
-    private Recipe Recipe;
+    private Recipe recipe;
 
     @Column(name = "Title", nullable = false)
-    private String Title;
+    private String title;
 
     @Column(name = "Description")
-    private String Description;
+    private String description;
 
     @Column(name = "ImageUrl")
-    private String ImageUrl;
+    private String imageUrl;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CreationDate", nullable = false)
-    private Date CreationDate;
+    private Date creationDate;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "ModificationDate", nullable = false)
-    private Date ModificationDate;
+    private Date modificationDate;
 }

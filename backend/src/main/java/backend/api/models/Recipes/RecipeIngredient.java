@@ -18,26 +18,26 @@ public class RecipeIngredient
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "Name")
-    private String Name;
+    private String name;
 
     @Column(name = "Custom", nullable = false)
-    private Boolean Custom;
+    private Boolean custom;
 
     @Column(name = "Quantity", nullable = false)
-    private Double Quantity;
+    private Double quantity;
 
     @ManyToOne
     @JoinColumn(name = "RecipeId", nullable = false)
-    private Recipe Recipe;
+    private Recipe recipe;
 
     @ManyToOne
     @JoinColumn(name = "ProductId")
-    private Product Product;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "UnitId", nullable = false)
-    private Unit Unit;
+    private Unit unit;
 }

@@ -3,8 +3,8 @@ package backend.api.models.Products;
 import jakarta.persistence.*;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
 @Entity
@@ -16,11 +16,11 @@ public class Product
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "Tag", nullable = false, unique = true)
-    private String Tag;
+    private String tag;
 
     @Column(name = "Name", nullable = false, unique = true)
-    private String Name;
+    private String name;
 }

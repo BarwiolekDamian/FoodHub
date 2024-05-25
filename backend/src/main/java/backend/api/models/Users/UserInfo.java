@@ -4,8 +4,8 @@ import java.util.Date;
 import jakarta.persistence.*;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
 @Entity
@@ -15,26 +15,26 @@ import lombok.NoArgsConstructor;
 public class UserInfo
 {
     @Id
-    private Integer UserId;
+    private Integer userId;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id")
     @MapsId
-    private User User;
+    private User user;
 
     @Column(name = "FirstName", nullable = false)
-    private String FirstName;
+    private String firstName;
 
     @Column(name = "LastName", nullable = false)
-    private String LastName;
+    private String lastName;
 
     @Column(name = "PhoneNumber")
-    private Integer PhoneNumber;
+    private Integer phoneNumber;
 
     @Column(name = "ImageUrl")
-    private String ImageUrl;
+    private String imageUrl;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "RegistrationDate", nullable = false)
-    private Date RegistrationDate;
+    private Date registrationDate;
 }

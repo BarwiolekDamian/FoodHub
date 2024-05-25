@@ -3,8 +3,8 @@ package backend.api.models.Users;
 import jakarta.persistence.*;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
 @Entity
@@ -16,21 +16,21 @@ public class User
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "Login", nullable = false, unique = true)
-    private String Login;
+    private String login;
 
     @Column(name = "Email", nullable = false, unique = true)
-    private String Email;
+    private String email;
 
     @Column(name = "Password", nullable = false)
-    private String Password;
+    private String password;
 
     @Column(name = "Active", nullable = false)
-    private Boolean Active;
+    private Boolean active = true;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "UserRole", nullable = false)
-    private UserRole UserRole;
+    private UserRole userRole;
 }

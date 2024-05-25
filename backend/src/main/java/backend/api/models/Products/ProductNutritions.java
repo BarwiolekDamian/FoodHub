@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import backend.api.models.Units.Unit;
 
 import lombok.Data;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
 @Entity
@@ -15,41 +15,41 @@ import lombok.NoArgsConstructor;
 public class ProductNutritions
 {
     @Id
-    private Integer ProductId;
+    private Integer productId;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id")
     @MapsId
-    private Product Product;
+    private Product product;
 
     @Column(name = "Calories")
-    private Double Calories;
+    private Double calories;
 
     @Column(name = "Fat")
-    private Double Fat;
+    private Double fat;
 
     @Column(name = "Cholesterol")
-    private Double Cholesterol;
+    private Double cholesterol;
 
     @Column(name = "Sodium")
-    private Double Sodium;
+    private Double sodium;
 
     @Column(name = "Potassium")
-    private Double Potassium;
+    private Double potassium;
 
     @Column(name = "Sugars")
-    private Double Sugars;
+    private Double sugars;
 
     @Column(name = "Fiber")
-    private Double Fiber;
+    private Double fiber;
 
     @Column(name = "Protein")
-    private Double Protein;
+    private Double protein;
 
     @Column(name = "Per", nullable = false)
-    private Integer Per;
+    private Integer per;
 
     @ManyToOne
     @JoinColumn(name = "PerUnitId", nullable = false)
-    private Unit Unit;
+    private Unit unit;
 }

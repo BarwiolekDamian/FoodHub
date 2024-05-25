@@ -16,18 +16,18 @@ public class RecipeStep
     @Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "SequenceNumber", nullable = false)
-    private Integer SequenceNumber;
+    private Integer sequenceNumber;
 
     @Column(name = "Content", nullable = false)
-    private String Content;
+    private String content;
 
     @Column(name = "ImageUrl")
-    private String ImageUrl;
+    private String imageUrl;
 
     @ManyToOne
     @JoinColumn(name = "RecipeId", nullable = false)
-    private Recipe Recipe;
+    private Recipe recipe;
 }
