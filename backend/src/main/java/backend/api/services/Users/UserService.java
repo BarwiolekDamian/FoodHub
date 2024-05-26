@@ -1,8 +1,12 @@
 package backend.api.services.Users;
 
+import backend.api.models.Users.*;
 import backend.api.repositories.Users.*;
 
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import java.util.NoSuchElementException;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,4 +16,14 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService
 {
     private final UserRepository userRepository;
+
+    public User getUserByLogin(String userLogin)
+    {
+        Optional<User> repoResponse = userRepository.findByLogin(userLogin);
+
+        if(repoResponse.isPresent())
+            return repoResponse.get();
+        else
+            throw new NoSuchElementException("INVALID USER: '" + userLogin + "'");
+    }
 }

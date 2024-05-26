@@ -15,12 +15,9 @@ import lombok.AllArgsConstructor;
 public class UserInfo
 {
     @Id
+    @Column(name = "UserId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id")
-    @MapsId
-    private User user;
 
     @Column(name = "FirstName", nullable = false)
     private String firstName;
