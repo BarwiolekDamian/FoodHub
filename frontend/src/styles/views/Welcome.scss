@@ -1,0 +1,49 @@
+.mainWelcome {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.divWelcomeLogo {
+    gap: 1.9rem;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.imgWelcomeLogo {
+    width: 10rem;
+    height: 10rem;
+}
+
+.hWelcomeLogo {
+    font-size: 5rem;
+    font-weight: bold;
+
+    cursor: default;
+    color: #FFFFFF;
+}
+
+.buttonWelcomeAuth {
+    width: 35rem;
+    height: 5.9rem;
+    padding: 0.5rem;
+
+    cursor: pointer;
+    transition: all .3s ease;
+
+    line-height: 1;
+    font-size: 2rem;
+
+    color: #FFFFFF;
+    background-color: transparent;
+
+    border-radius: 1rem;
+    border: 0.3rem solid #FFFFFF;
+}
+
+.buttonWelcomeAuth:hover {
+    color: #3D3C9D;
+    background-color: #FFFFFF;
+}
