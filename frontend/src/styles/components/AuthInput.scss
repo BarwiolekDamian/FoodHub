@@ -1,0 +1,36 @@
+.divAuthInput {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.labelAuthInput {
+    margin-left: 1rem;
+    color: #FFFFFF;
+
+    text-align: left;
+    font-size: 1.55rem;
+}
+
+.inputAuthInput {
+    width: 35rem;
+    height: 5.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+
+    color: #FFFFFF;
+    font-size: 1.7rem;
+    background-color: transparent;
+
+    outline: none;
+    border-radius: 1rem;
+    border: 3px solid #FFFFFF;
+}
+
+.inputAuthInput::placeholder {
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.inputAuthInput:focus {
+    border: 3px solid #2B2A6E;
+}
