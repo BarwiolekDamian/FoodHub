@@ -50,6 +50,7 @@ public class AuthenticationService
         return userRepository.save(newUser);
     }
 
+    @Transactional
     public User loginUser(LoginRequest requestInput)
     {
         authenticationManager.authenticate

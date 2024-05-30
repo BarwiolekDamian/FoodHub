@@ -1,14 +1,11 @@
-package backend.auth;
+package backend.config;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
+import backend.auth.JwtAuthenticationFilter;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -31,30 +28,13 @@ public class SecurityConfig
             .authorizeHttpRequests
             (
                 httpRequests -> httpRequests
-                    .requestMatchers("/auth/**")
-                    .permitAll()
                     .anyRequest()
-                    .authenticated()
+                    .permitAll()
             )
             .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
             .authenticationProvider(authenticationProvider);
 
         return httpSecurity.build();
-    }
-
-    @Bean
-    CorsConfigurationSource corsConfigurationSource()
-    {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        UrlBasedCorsConfigurationSource configSource = new UrlBasedCorsConfigurationSource();
-
-        corsConfiguration.setAllowedMethods(List.of("GET", "POST"));
-        corsConfiguration.setAllowedOrigins(List.of("http://localhost:8080"));
-        corsConfiguration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
-
-        configSource.registerCorsConfiguration("/**", corsConfiguration);
-
-        return configSource;
     }
 }
