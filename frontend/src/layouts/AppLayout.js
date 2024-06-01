@@ -1,6 +1,6 @@
 import React from 'react';
 import SidePanel from '../components/SidePanel.js';
-import '../styles/layouts/AuthLayout.scss';
+import '../styles/layouts/AppLayout.scss';
 
 const AppLayout = ({ children }) =>
 {

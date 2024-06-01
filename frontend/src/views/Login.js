@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Logo from '../images/logo.png';
 import { Navigate } from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
 import AuthInput from '../components/AuthInput';
@@ -69,8 +68,11 @@ const Login = () =>
                 case 'UNKNOWN_USER':
                     alert('Provided User Doesn\'t Exist.');
                     break;
+                case 'INVALID_PASSWORD':
+                    alert('Provided Password Is Incorrect.');
+                    break;
                 default:
-                    alert('Incorrect Credentials.');
+                    alert('Something Went Wrong.');
                     break;
             }
         }
@@ -110,7 +112,7 @@ const Login = () =>
             </section>
 
             <section className = 'sectionLoginRight'>
-                <img src = {Logo} alt = 'Logo' className = 'imgLoginLogo' />
+                <img src = '/logo.png' alt = 'Logo' className = 'imgLoginLogo' />
             </section>
         </AuthLayout>
     );

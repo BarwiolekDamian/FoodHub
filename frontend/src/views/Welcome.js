@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Logo from '../images/logo.png';
 import AuthLayout from '../layouts/AuthLayout';
 import GuestRouteWrapper from './GuestRouteWrapper';
 
@@ -12,7 +11,7 @@ const Welcome = () =>
         <AuthLayout>
             <main className = 'mainWelcome'>
                 <div className = 'divWelcomeLogo'>
-                    <img src = {Logo} alt = 'Logo' className = 'imgWelcomeLogo' />
+                    <img src = '/logo.png' alt = 'Logo' className = 'imgWelcomeLogo' />
                     <h1 className = 'hWelcomeLogo'>FoodHub</h1>
                 </div>
 

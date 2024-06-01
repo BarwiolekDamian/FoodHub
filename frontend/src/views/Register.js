@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Logo from '../images/logo.png';
 import Exception from '../utils/Exception';
 import { Navigate } from 'react-router-dom';
 import AuthLayout from '../layouts/AuthLayout';
@@ -93,6 +92,9 @@ const Register = () =>
                 case 'MISMATCHING_PASSWORDS':
                     alert('Passwords Are Not Identical.');
                     break;
+                case 'USER_EXISTS':
+                    alert('User With Provided Login Already Exists.');
+                    break;
                 default:
                     alert('Something Went Wrong.');
                     break;
@@ -114,7 +116,7 @@ const Register = () =>
     return (
         <AuthLayout>
             <section className = 'sectionRegisterLeft'>
-                <img src = {Logo} alt = 'Logo' className = 'imgRegisterLogo' />
+                <img src = '/logo.png' alt = 'Logo' className = 'imgRegisterLogo' />
             </section>
 
             <section className = 'sectionRegisterRight'>
