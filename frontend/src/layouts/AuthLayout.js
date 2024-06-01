@@ -1,6 +1,5 @@
 import React from 'react';
-
-import '../styles/layouts/AuthLayout.scss'
+import '../styles/layouts/AuthLayout.scss';
 
 const AuthLayout = ({ children }) =>
 {

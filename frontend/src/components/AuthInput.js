@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/components/AuthInput.scss'
+import '../styles/components/AuthInput.scss';
 
 const AuthInput = ({ labelContent, inputPlaceholder, inputType, inputName, onBlur, inputValue }) =>
 {
