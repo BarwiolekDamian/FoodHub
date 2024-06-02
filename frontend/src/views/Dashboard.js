@@ -7,7 +7,7 @@ const Dashboard = () =>
 {
     const navigateTo = useNavigate();
 
-    useEffect (() => { navigateTo('/test') });
+    // useEffect (() => { navigateTo('/test') });
 
     return (
         <AppLayout></AppLayout>
