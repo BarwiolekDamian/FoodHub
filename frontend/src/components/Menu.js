@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import '../styles/components/Menu.scss';
 
-const Menu = ({ }) =>
+const Menu = () =>
 {
     const [activeIndex, setActiveIndex] = useState(null);
     const panelsRef = useRef([]);

@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom';
 
 import '../styles/components/PanelFooter.scss';
 
-const PanelFooter = ({ }) =>
+const PanelFooter = () =>
 {
     const navigateTo = useNavigate();
 

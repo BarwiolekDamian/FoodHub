@@ -1,0 +1,39 @@
+.divEditProfileInput {
+    gap: 0.5rem;
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.labelEditProfileInput {
+    color: #3D3C9D;
+    margin-left: 1rem;
+
+    text-align: left;
+    font-size: 1.55rem;
+}
+
+.inputEditProfileInput {
+    width: 100%;
+    height: 5.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+
+    color: #3D3C9D;
+    font-size: 1.7rem;
+
+    outline: none;
+    background-color: transparent;
+
+    border-radius: 1rem;
+    border: 3px solid #3D3C9D;
+}
+
+.inputEditProfileInput::placeholder {
+    opacity: 0.5;
+    color: #FFFFFF;
+}
+
+.inputEditProfileInput:focus {
+    border: 3px solid #2B2A6E;
+}
