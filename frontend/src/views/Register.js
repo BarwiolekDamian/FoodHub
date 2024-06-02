@@ -128,7 +128,6 @@ const Register = () =>
                         labelContent = 'First Name'
                         inputName = 'userFirstName'
                         inputPlaceholder = 'Name'
-                        value = { authState.userFirstName }
                         onBlur = { handleInputBlur }
                     />
 
@@ -137,7 +136,6 @@ const Register = () =>
                         labelContent = 'Last Name'
                         inputName = 'userLastName'
                         inputPlaceholder = 'Surname'
-                        value = { authState.userLastName }
                         onBlur = { handleInputBlur }
                     />
 
@@ -146,7 +144,6 @@ const Register = () =>
                         labelContent = 'Login'
                         inputName = 'userLogin'
                         inputPlaceholder = 'Login'
-                        value = { authState.userLogin }
                         onBlur = { handleInputBlur }
                     />
 
@@ -155,7 +152,6 @@ const Register = () =>
                         labelContent = 'Email'
                         inputName = 'userEmail'
                         inputPlaceholder = 'Email'
-                        value = { authState.userEmail }
                         onBlur = { handleInputBlur }
                     />
 
@@ -164,7 +160,6 @@ const Register = () =>
                         labelContent = 'Password'
                         inputName = 'userPassword'
                         inputPlaceholder = 'Password'
-                        value = { authState.userPassword }
                         onBlur = { handleInputBlur }
                     />
 
@@ -173,7 +168,6 @@ const Register = () =>
                         labelContent = 'Repeat Password'
                         inputName = 'userPasswordRepeated'
                         inputPlaceholder = 'Password'
-                        value = { authState.userPasswordRepeated }
                         onBlur = { handleInputBlur }
                     />
 

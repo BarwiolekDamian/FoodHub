@@ -92,7 +92,6 @@ const Login = () =>
                         labelContent = 'Login'
                         inputName = 'userLogin'
                         inputPlaceholder = 'Login'
-                        value = { authState.userLogin }
                         onBlur = { handleInputBlur }
                     />
 
@@ -101,7 +100,6 @@ const Login = () =>
                         labelContent = 'Password'
                         inputName = 'userPassword'
                         inputPlaceholder = 'Password'
-                        value = { authState.userPassword }
                         onBlur = { handleInputBlur }
                     />
 

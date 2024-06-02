@@ -1,8 +1,10 @@
-import Login from './views/Login'
-import Welcome from './views/Welcome'
-import Register from './views/Register'
+import Login from './views/Login';
+import Welcome from './views/Welcome';
+import Register from './views/Register';
+import Dashboard from './views/Dashboard';
+import EditProfile from './views/EditProfile';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App()
 {
@@ -13,6 +15,8 @@ function App()
 				<Route path = "*" element = { <Welcome/> } />
 				<Route path = "/login" element = { <Login/> } />
 				<Route path = "/register" element = { <Register/> } />
+				<Route path = "/dashboard" element = { <Dashboard/> } />
+				<Route path = "/edit-profile" element = { <EditProfile/> } />
 			</Routes>
 		</Router>
 	);
