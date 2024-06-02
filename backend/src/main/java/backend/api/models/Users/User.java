@@ -3,7 +3,6 @@ package backend.api.models.Users;
 import java.util.List;
 import java.util.Collection;
 import jakarta.persistence.*;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -40,8 +39,8 @@ public class User implements UserDetails
     private UserRole userRole;
 
     @MapsId
-    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id")
+    @OneToOne(fetch = FetchType.EAGER)
     private UserInfo userInfo;
 
     @Override
