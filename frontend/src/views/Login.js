@@ -18,7 +18,7 @@ const Login = () =>
 
     useEffect (() => { }, [authState]);
 
-    const handleInputBlur = (inputEvent) =>
+    const handleInputChange = (inputEvent) =>
     {
         const { name, value } = inputEvent.target;
 
@@ -92,7 +92,7 @@ const Login = () =>
                         labelContent = 'Login'
                         inputName = 'userLogin'
                         inputPlaceholder = 'Login'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <AuthInput
@@ -100,7 +100,7 @@ const Login = () =>
                         labelContent = 'Password'
                         inputName = 'userPassword'
                         inputPlaceholder = 'Password'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <button className = 'buttonLoginAuth' type = 'submit'>Log In</button>

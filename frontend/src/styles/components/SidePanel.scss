@@ -1,11 +1,13 @@
 .divSidePanel {
+    gap: 5rem;
+
     width: 30rem;
     height: 100vh;
 
-    gap: 5rem;
+    position: fixed;
+    background-color: #2C2A6D;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    background-color: #2C2A6D;
 }

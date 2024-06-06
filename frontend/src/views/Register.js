@@ -23,7 +23,7 @@ const Register = () =>
 
     useEffect (() => { }, [authState]);
 
-    const handleInputBlur = (inputEvent) =>
+    const handleInputChange = (inputEvent) =>
     {
         const { name, value } = inputEvent.target;
 
@@ -128,7 +128,7 @@ const Register = () =>
                         labelContent = 'First Name'
                         inputName = 'userFirstName'
                         inputPlaceholder = 'Name'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <AuthInput
@@ -136,7 +136,7 @@ const Register = () =>
                         labelContent = 'Last Name'
                         inputName = 'userLastName'
                         inputPlaceholder = 'Surname'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <AuthInput
@@ -144,7 +144,7 @@ const Register = () =>
                         labelContent = 'Login'
                         inputName = 'userLogin'
                         inputPlaceholder = 'Login'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <AuthInput
@@ -152,7 +152,7 @@ const Register = () =>
                         labelContent = 'Email'
                         inputName = 'userEmail'
                         inputPlaceholder = 'Email'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <AuthInput
@@ -160,7 +160,7 @@ const Register = () =>
                         labelContent = 'Password'
                         inputName = 'userPassword'
                         inputPlaceholder = 'Password'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <AuthInput
@@ -168,7 +168,7 @@ const Register = () =>
                         labelContent = 'Repeat Password'
                         inputName = 'userPasswordRepeated'
                         inputPlaceholder = 'Password'
-                        onBlur = { handleInputBlur }
+                        onChange = { handleInputChange }
                     />
 
                     <button className = 'buttonRegisterAuth' type = 'submit'>Sign Up</button>

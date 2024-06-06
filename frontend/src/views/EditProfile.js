@@ -33,7 +33,7 @@ const EditProfile = () =>
         }
     }, [currentUser]);
 
-    const handleInputBlur = (inputEvent) =>
+    const handleInputChange = (inputEvent) =>
     {
         const { name, value } = inputEvent.target;
 
@@ -65,7 +65,7 @@ const EditProfile = () =>
         }
     };
 
-    const handleFormSubmit = (formEvent) =>
+    const handleFormSubmit = async (formEvent) =>
     {
         formEvent.preventDefault();
 
@@ -89,8 +89,8 @@ const EditProfile = () =>
             {
                 const formData = new FormData();
                 formData.append('File', imageFile);
-    
-                axios.put
+
+                await axios.put
                 (
                     `http://localhost:8080/api/user-info/update/${currentUser.userId}/avatar`, formData,
                     {
@@ -103,7 +103,7 @@ const EditProfile = () =>
             }
 
             // Upload User Info
-            axios.put
+            await axios.put
             (
                 `http://localhost:8080/api/user-info/update/${currentUser.userId}`,
                 {
@@ -179,6 +179,7 @@ const EditProfile = () =>
                                 <img
                                     src = {modifiedData?.userImageUrl ? modifiedData.userImageUrl : '/default-avatar.png'}
                                     className = 'imgProfileImage'
+                                    alt = ''
                                 />
 
                                 <label htmlFor = 'profileImageUpload' className = 'labelProfileImage'>
@@ -199,7 +200,7 @@ const EditProfile = () =>
                                 labelContent = 'Login'
                                 inputName = 'userLogin'
                                 inputValue = { currentUser?.userLogin ? currentUser.userLogin : '' }
-                                onBlur = { handleInputBlur }
+                                onChange = { handleInputChange }
                                 isDisabled = { true }
                             />
 
@@ -208,7 +209,7 @@ const EditProfile = () =>
                                 labelContent = 'Email'
                                 inputName = 'userEmail'
                                 inputValue = { currentUser?.userEmail ? currentUser.userEmail : '' }
-                                onBlur = { handleInputBlur }
+                                onChange = { handleInputChange }
                                 isDisabled = { true }
                             />
 
@@ -217,7 +218,7 @@ const EditProfile = () =>
                                 labelContent = 'First Name'
                                 inputName = 'userFirstName'
                                 inputValue = { currentUser?.userInfo?.firstName ? currentUser.userInfo.firstName : '' }
-                                onBlur = { handleInputBlur }
+                                onChange = { handleInputChange }
                             />
 
                             <EditProfileInput
@@ -225,7 +226,7 @@ const EditProfile = () =>
                                 labelContent = 'Last Name'
                                 inputName = 'userLastName'
                                 inputValue = { currentUser?.userInfo?.lastName ? currentUser.userInfo.lastName : '' }
-                                onBlur = { handleInputBlur }
+                                onChange = { handleInputChange }
                             />
 
                             <EditProfileInput
@@ -233,7 +234,7 @@ const EditProfile = () =>
                                 labelContent = 'Phone Number'
                                 inputName = 'userPhoneNumber'
                                 inputValue = { currentUser?.userInfo?.phoneNumber ? currentUser.userInfo.phoneNumber : '' }
-                                onBlur = { handleInputBlur }
+                                onChange = { handleInputChange }
                             />
 
                             <button className = 'buttonEditProfile-SaveChanges' type = 'submit'>

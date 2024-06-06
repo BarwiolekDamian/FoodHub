@@ -1,5 +1,4 @@
 .divAppLayout {
-    width: 100vw;
     height: 100vh;
 
     display: flex;
@@ -11,9 +10,8 @@
 
 .mainAppLayout-MainPanel {
     height: 100vh;
+    margin-left: 30rem;
     width: calc(100vw - 30rem);
-
-    position: relative;
 }
 
 .divAppLayout-HeaderPanel {
@@ -29,8 +27,8 @@
 
 .divAppLayout-ContentPanel {
     width: 100%;
-    height: calc(100vh - 5.7rem);
-    padding: 5rem 3rem;
+    height: auto;
+    padding: 4.3rem 3rem;
 }
 
 .h1AppLayout-HeaderPanelName {

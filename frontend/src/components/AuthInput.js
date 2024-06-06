@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../styles/components/AuthInput.scss';
 
-const AuthInput = ({ labelContent, inputPlaceholder, inputType, inputName, onBlur, inputValue }) =>
+const AuthInput = ({ labelContent, inputPlaceholder, inputType, inputName, onChange, inputValue }) =>
 {
     return (
         <div className = 'divAuthInput'>
@@ -10,7 +10,7 @@ const AuthInput = ({ labelContent, inputPlaceholder, inputType, inputName, onBlu
 
             <input
                 className = 'inputAuthInput'
-                onBlur = { onBlur }
+                onChange = { onChange }
                 name = { inputName }
                 type = { inputType }
                 value = { inputValue }
