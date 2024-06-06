@@ -18,12 +18,16 @@ public class Unit
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Tag", nullable = false, unique = true)
-    private String tag;
-
     @Column(name = "Symbol", nullable = false, unique = true)
     private String symbol;
 
     @Column(name = "Name", nullable = false, unique = true)
     private String name;
+
+    public Unit(String unitSymbol)
+    {
+        this.id = null;
+        this.name = null;
+        this.symbol = unitSymbol;
+    }
 }
