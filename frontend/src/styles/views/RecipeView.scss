@@ -95,3 +95,19 @@
         background-color: darken(#2B2A6E, 10%);
     }
 }
+
+.divShowRecipe-ImageWrapper {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.imgShowRecipe {
+    width: auto;
+    max-height: 35vh;
+
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

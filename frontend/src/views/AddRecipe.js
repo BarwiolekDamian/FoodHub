@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Exception from '../utils/Exception';
 import AppLayout from '../layouts/AppLayout';
+import { useNavigate } from 'react-router-dom';
 import AuthRouteWrapper from './AuthRouteWrapper';
 import RecipeMainInput from '../components/RecipeMainInput';
 import RecipeStepInput from '../components/RecipeStepInput';
@@ -12,6 +13,7 @@ import '../styles/views/RecipeView.scss';
 
 const AddRecipe = ({ accessType }) =>
 {
+    const navigateTo = useNavigate();
     const currentUser = useFetchCurrentUser();
     const [recipeSteps, setRecipeSteps] = useState([]);
     const [recipeIngredients, setRecipeIngredients] = useState([]);
@@ -156,8 +158,8 @@ const AddRecipe = ({ accessType }) =>
             }
 
             // Successfully Added - Send Confirmation Alert
-            window.location.reload();
             alert('Recipe Successfully Added.');
+            navigateTo(`/recipe/${apiResponse.data.Id}`);
         }
         catch(Exception)
         {

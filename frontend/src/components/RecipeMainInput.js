@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../styles/components/RecipeMainInput.scss';
 
-const RecipeMainInput = ({ inputType = 'text', labelContent, inputName, onChange, inputValue }) =>
+const RecipeMainInput = ({ inputType = 'text', labelContent = '', inputName, onChange, inputValue }) =>
 {
     return (
         <div className = 'divRecipeMainInput'>

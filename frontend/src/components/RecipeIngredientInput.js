@@ -2,9 +2,9 @@ import React from 'react';
 
 import '../styles/components/RecipeIngredientInput.scss';
 
-const RecipeIngredientInput = ({ ingredientSequence, inputValue = [], onChange }) =>
+const RecipeIngredientInput = ({ ingredientSequence, inputValue = {}, onChange }) =>
 {
-    const [ingredientName = null, ingredientQuantity = null, ingredientUnit = null] = inputValue;
+    const { ingredientName = null, ingredientQuantity = null, ingredientUnit = null } = inputValue;
 
     const handleNameChange = (inputEvent) =>
     {
