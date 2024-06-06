@@ -1,9 +1,8 @@
 package backend.api.models.Recipes;
 
+import lombok.Data;
 import java.util.Date;
 import jakarta.persistence.*;
-
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
@@ -15,12 +14,9 @@ import lombok.AllArgsConstructor;
 public class RecipeInfo
 {
     @Id
+    @Column(name = "RecipeId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer recipeId;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id")
-    @MapsId
-    private Recipe recipe;
 
     @Column(name = "Title", nullable = false)
     private String title;

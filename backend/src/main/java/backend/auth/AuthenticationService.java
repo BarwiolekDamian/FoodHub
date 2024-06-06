@@ -15,6 +15,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 @Service
+@Transactional
 @AllArgsConstructor
 public class AuthenticationService
 {
@@ -23,7 +24,6 @@ public class AuthenticationService
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
-    @Transactional
     public User registerUser(RegisterRequest requestInput)
     {
         UserInfo userInfo = new UserInfo
@@ -44,13 +44,13 @@ public class AuthenticationService
             passwordEncoder.encode(requestInput.getPassword()),
             true,
             UserRole.USER,
-            userInfo
+            userInfo,
+            null
         );
 
         return userRepository.save(newUser);
     }
 
-    @Transactional
     public User loginUser(LoginRequest requestInput)
     {
         authenticationManager.authenticate

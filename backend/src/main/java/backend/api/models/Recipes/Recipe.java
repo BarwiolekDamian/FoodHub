@@ -1,7 +1,12 @@
 package backend.api.models.Recipes;
 
+import backend.api.models.Users.*;
+
+import java.util.List;
 import jakarta.persistence.*;
-import backend.api.models.Users.User;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,7 +31,21 @@ public class Recipe
     @Column(name = "RecipeAccess", nullable = false)
     private RecipeAccess recipeAccess;
 
-    @ManyToOne
-    @JoinColumn(name = "AuthorId", nullable = false)
+    @MapsId
+    @JoinColumn(name = "Id")
+    @OneToOne(fetch = FetchType.EAGER)
+    private RecipeInfo recipeInfo;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RecipeStep> recipeSteps;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RecipeIngredient> recipeIngredients;
+
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "UserId", nullable = false)
     private User user;
 }

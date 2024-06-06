@@ -1,8 +1,11 @@
 package backend.api.models.Users;
 
+import backend.api.models.Recipes.*;
+
 import java.util.List;
 import java.util.Collection;
 import jakarta.persistence.*;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -42,6 +45,9 @@ public class User implements UserDetails
     @JoinColumn(name = "Id")
     @OneToOne(fetch = FetchType.EAGER)
     private UserInfo userInfo;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Recipe> userRecipes;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities()

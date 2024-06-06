@@ -2,6 +2,8 @@ package backend.api.models.Recipes;
 
 import jakarta.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -24,10 +26,8 @@ public class RecipeStep
     @Column(name = "Content", nullable = false)
     private String content;
 
-    @Column(name = "ImageUrl")
-    private String imageUrl;
-
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "RecipeId", nullable = false)
     private Recipe recipe;
 }

@@ -1,8 +1,9 @@
 package backend.api.models.Recipes;
 
+import backend.api.models.Units.*;
+
 import jakarta.persistence.*;
-import backend.api.models.Units.Unit;
-import backend.api.models.Products.Product;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,15 +30,12 @@ public class RecipeIngredient
     @Column(name = "Quantity", nullable = false)
     private Double quantity;
 
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "RecipeId", nullable = false)
     private Recipe recipe;
 
-    @ManyToOne
-    @JoinColumn(name = "ProductId")
-    private Product product;
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "UnitId", nullable = false)
     private Unit unit;
 }
