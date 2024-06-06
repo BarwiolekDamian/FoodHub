@@ -6,8 +6,10 @@ import backend.api.services.Users.*;
 import backend.api.repositories.Recipes.*;
 
 import java.util.Date;
-import lombok.RequiredArgsConstructor;
+import java.util.Optional;
+import java.util.NoSuchElementException;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +21,16 @@ public class RecipeService
     private final RecipeRepository recipeRepository;
     private final UnitService unitService;
     private final UserService userService;
+
+    public Recipe getRecipeById(Integer recipeId)
+    {
+        Optional<Recipe> repoResponse = recipeRepository.findById(recipeId);
+
+        if(repoResponse.isPresent())
+            return repoResponse.get();
+        else
+            throw new NoSuchElementException("INVALID RECIPE: '" + recipeId + "'");
+    }
 
     @Transactional
     public Recipe addRecipe(RecipeRequest recipeRequest)
