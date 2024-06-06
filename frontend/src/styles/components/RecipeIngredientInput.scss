@@ -1,0 +1,47 @@
+.divRecipeIngredientInput {
+    gap: 3rem;
+    width: 100%;
+
+    display: flex;
+}
+
+.inputRecipeIngredientInput-Text,
+.inputRecipeIngredientInput-Number {
+    width: 70%;
+    height: 5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+
+    color: #3D3C9D;
+    font-size: 1.7rem;
+
+    outline: none;
+    background-color: transparent;
+
+    border-radius: 1rem;
+    border: 0.3rem solid #3D3C9D;
+}
+
+.inputRecipeIngredientInput-Number {
+    width: 15%;
+}
+
+.selectRecipeIngredientInput {
+    width: 10%;
+    height: 5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+
+    color: #3D3C9D;
+    font-size: 1.7rem;
+
+    outline: none;
+    background-color: transparent;
+
+    border-radius: 1rem;
+    border: 0.3rem solid #3D3C9D;
+}
+
+.selectRecipeIngredientInput option {
+    color: #3D3C9D;
+    font-size: 1.7rem;
+    padding: 1rem;
+}
