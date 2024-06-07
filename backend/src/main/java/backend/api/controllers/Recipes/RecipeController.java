@@ -27,6 +27,12 @@ public class RecipeController
         return ResponseEntity.ok(recipeService.getRecipeById(recipeId));
     }
 
+    @GetMapping("/get/all/access/{recipeAccess}")
+    public ResponseEntity<List<Recipe>> getRecipesByAccessLevel(@PathVariable RecipeAccess recipeAccess)
+    {
+        return ResponseEntity.ok(recipeService.getRecipesByAccessLevel(recipeAccess));
+    }
+
     @GetMapping("/get/all/user/{userId}/access/{recipeAccess}")
     public ResponseEntity<List<Recipe>> getRecipesByUserAndAccessLevel(@PathVariable Integer userId, @PathVariable RecipeAccess recipeAccess)
     {

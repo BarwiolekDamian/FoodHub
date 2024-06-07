@@ -11,5 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Integer>
 {
+    List<Recipe> findByRecipeAccess(RecipeAccess accessLevel);
+
     List<Recipe> findByUserIdAndRecipeAccess(Integer userId, RecipeAccess accessLevel);
 }

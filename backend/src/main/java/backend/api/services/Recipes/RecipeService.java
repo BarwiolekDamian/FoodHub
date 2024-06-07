@@ -11,6 +11,7 @@ import java.util.Optional;
 import java.util.NoSuchElementException;
 
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +37,16 @@ public class RecipeService
     public List<Recipe> getRecipesByUserAndAccessLevel(Integer userId, RecipeAccess accessLevel)
     {
         List<Recipe> repoResponse = recipeRepository.findByUserIdAndRecipeAccess(userId, accessLevel);
+
+        if(!repoResponse.isEmpty())
+            return repoResponse;
+        else
+            throw new NoSuchElementException("EMPTY COLLECTION: 'Recipe'");
+    }
+
+    public List<Recipe> getRecipesByAccessLevel(RecipeAccess accessLevel)
+    {
+        List<Recipe> repoResponse = recipeRepository.findByRecipeAccess(accessLevel);
 
         if(!repoResponse.isEmpty())
             return repoResponse;
