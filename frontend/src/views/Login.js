@@ -72,7 +72,7 @@ const Login = () =>
                     alert('Provided Password Is Incorrect.');
                     break;
                 default:
-                    alert('Something Went Wrong.');
+                    alert('Incorrect Login Or Password.');
                     break;
             }
         }

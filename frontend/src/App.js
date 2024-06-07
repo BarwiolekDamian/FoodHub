@@ -1,6 +1,7 @@
 import Login from './views/Login';
 import Welcome from './views/Welcome';
 import Register from './views/Register';
+import ShowUnits from './views/ShowUnits';
 import Dashboard from './views/Dashboard';
 import AddRecipe from './views/AddRecipe';
 import ShowRecipe from './views/ShowRecipe';
@@ -19,6 +20,7 @@ function App()
 				<Route path = "/login" element = { <Login/> } />
 				<Route path = "/register" element = { <Register/> } />
 				<Route path = "/dashboard" element = { <Dashboard/> } />
+				<Route path = "/show-users" element = { <ShowUnits/> } />
 				<Route path = "/edit-profile" element = { <EditProfile/> } />
 				<Route path = "/recipe/:recipeId" element={ <ShowRecipe/> } />
 				<Route path = "/add-public-recipe" element = { <AddRecipe accessType = 'PUBLIC' /> } />

@@ -18,7 +18,7 @@ const SidePanel = () =>
                 fullName = {currentUser?.userInfo?.firstName && currentUser?.userInfo?.lastName ? currentUser.userInfo.firstName + ' ' + currentUser.userInfo.lastName : ''}
             />
 
-            <Menu />
+            <Menu accessType = { currentUser?.userRole || 'USER' } />
             <PanelFooter />
         </div>
     );

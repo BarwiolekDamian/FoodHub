@@ -1,0 +1,41 @@
+.tableShowUnits {
+    width: 90%;
+    margin: 2rem auto;
+
+    border-collapse: collapse;
+
+    text-align: left;
+
+    th, td {
+        padding: 1.15rem 1.5rem;
+        font-size: 2rem;
+    }
+
+    thead {
+        color: #FFFFFF;
+        background-color: #2B2A6E;
+
+        th {
+            border-bottom: 0.1rem solid #DDDDDD;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 0.1rem solid #DDDDDD;
+
+            &:nth-of-type(even) {
+                background-color: #F9F9F9;
+            }
+
+            &:hover {
+                background-color: #F1F1F1;
+            }
+        }
+    }
+}
+
+p {
+    font-size: 1.3rem;
+    color: #666666;
+}

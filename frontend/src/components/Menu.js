@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import '../styles/components/Menu.scss';
 
-const Menu = () =>
+const Menu = ({ accessType }) =>
 {
     const [activeIndex, setActiveIndex] = useState(null);
     const panelsRef = useRef([]);
@@ -103,6 +103,24 @@ const Menu = () =>
                         </li>
                     </ul>
                 </li>
+
+                {
+                    accessType === 'ADMIN' &&
+                    (
+                        <li className = 'liMenu-CategoryPanel'>
+                        <button className = 'buttonMenu-CategoryPanel' onClick = {() => handleButtonClick(4)}>
+                            CONTROL PANEL
+                            <span className = {`spanMenu-Arrow ${activeIndex === 4 ? 'rotateArrow' : ''}`}>&#x23F7;</span>
+                        </button>
+
+                        <ul className = 'ulMenu-ItemsPanel' ref = {(refElement) => (panelsRef.current[4] = refElement)}>
+                            <li className = 'liMenu-SubItem'>
+                                <a href = '/show-users'>SHOW USERS</a>
+                            </li>
+                        </ul>
+                    </li>
+                    )
+                }
             </ul>
         </nav>
     );

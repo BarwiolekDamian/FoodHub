@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const useFetchRecipe = ( recipeId ) =>
+const UseFetchRecipe = ( recipeId ) =>
 {
     const [currentRecipe, setCurrentRecipe] = useState(null);
 
@@ -42,4 +42,4 @@ const useFetchRecipe = ( recipeId ) =>
     return currentRecipe;
 }
 
-export default useFetchRecipe;
+export default UseFetchRecipe;

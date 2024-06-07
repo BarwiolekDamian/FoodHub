@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const useFetchCurrentUser = () =>
+const UseFetchCurrentUser = () =>
 {
     const [currentUser, setCurrentUser] = useState(null);
 
@@ -52,4 +52,4 @@ const useFetchCurrentUser = () =>
     return currentUser;
 }
 
-export default useFetchCurrentUser;
+export default UseFetchCurrentUser;
