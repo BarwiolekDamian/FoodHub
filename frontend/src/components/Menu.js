@@ -56,7 +56,7 @@ const Menu = () =>
                         </li>
 
                         <li className = 'liMenu-SubItem'>
-                            <a href = '/my-observed-recipes'>OBSERVED RECIPES</a>
+                            <a href = '/my-public-recipes'>PUBLIC RECIPES</a>
                         </li>
                     </ul>
                 </li>
@@ -87,10 +87,6 @@ const Menu = () =>
                     <ul className = 'ulMenu-ItemsPanel' ref = {(refElement) => (panelsRef.current[2] = refElement)}>
                         <li className = 'liMenu-SubItem'>
                             <a href = '/browse-public-recipes'>BROWSE RECIPES</a>
-                        </li>
-
-                        <li className = 'liMenu-SubItem'>
-                            <a href = '/my-public-recipes'>PUBLISHED RECIPES</a>
                         </li>
                     </ul>
                 </li>

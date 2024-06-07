@@ -36,22 +36,12 @@ public class RecipeService
 
     public List<Recipe> getRecipesByUserAndAccessLevel(Integer userId, RecipeAccess accessLevel)
     {
-        List<Recipe> repoResponse = recipeRepository.findByUserIdAndRecipeAccess(userId, accessLevel);
-
-        if(!repoResponse.isEmpty())
-            return repoResponse;
-        else
-            throw new NoSuchElementException("EMPTY COLLECTION: 'Recipe'");
+        return recipeRepository.findByUserIdAndRecipeAccess(userId, accessLevel);
     }
 
     public List<Recipe> getRecipesByAccessLevel(RecipeAccess accessLevel)
     {
-        List<Recipe> repoResponse = recipeRepository.findByRecipeAccess(accessLevel);
-
-        if(!repoResponse.isEmpty())
-            return repoResponse;
-        else
-            throw new NoSuchElementException("EMPTY COLLECTION: 'Recipe'");
+        return recipeRepository.findByRecipeAccess(accessLevel);
     }
 
     @Transactional

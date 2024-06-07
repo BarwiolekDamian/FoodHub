@@ -23,8 +23,9 @@ function App()
 				<Route path = "/recipe/:recipeId" element={ <ShowRecipe/> } />
 				<Route path = "/add-public-recipe" element = { <AddRecipe accessType = 'PUBLIC' /> } />
 				<Route path = "/add-private-recipe" element = { <AddRecipe accessType = 'PRIVATE' /> } />
-				<Route path = "/my-public-recipes" element = { <BrowseRecipes accessType = 'PUBLIC' /> } />
-				<Route path = "/my-private-recipes" element = { <BrowseRecipes accessType = 'PRIVATE' /> } />
+				<Route path = "/my-public-recipes" element = { <BrowseRecipes accessType = 'PUBLIC' byUser = { true } /> } />
+				<Route path = "/my-private-recipes" element = { <BrowseRecipes accessType = 'PRIVATE' byUser = { true } /> } />
+				<Route path = "/browse-public-recipes" element = { <BrowseRecipes accessType = 'PUBLIC' byUser = { false } /> } />
 			</Routes>
 		</Router>
 	);

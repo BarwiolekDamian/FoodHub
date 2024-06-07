@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AppLayout from '../layouts/AppLayout';
 import AuthRouteWrapper from './AuthRouteWrapper';
-import useFetchUserRecipes from '../utils/UseFetchUserRecipes';
+import useFetchRecipes from '../utils/UseFetchRecipes';
 import useFetchCurrentUser from '../utils/UseFetchCurrentUser';
 
 import '../styles/views/BrowseRecipes.scss';
 
-const BrowseRecipes = ({ accessType }) =>
+const BrowseRecipes = ({ accessType, byUser }) =>
 {
     const currentUser = useFetchCurrentUser();
-    const userRecipes = useFetchUserRecipes(currentUser?.userId, accessType);
+    const userRecipes = useFetchRecipes(currentUser?.userId, accessType, byUser);
 
     if (!currentUser)
         return ( <AppLayout></AppLayout> );
@@ -23,7 +23,7 @@ const BrowseRecipes = ({ accessType }) =>
             <main className = 'mainAppLayout-MainPanel'>
                 <div className = 'divAppLayout-HeaderPanel'>
                     <h1 className = 'h1AppLayout-HeaderPanelName'>
-                        RECIPES <span>&#x23F5;</span> MY { accessType } RECIPES
+                        { !byUser ? 'COMMUNITY \u23F5 BROWSE RECIPES' : `RECIPES \u23F5 MY ${accessType} RECIPES` }
                     </h1>
                 </div>
 
