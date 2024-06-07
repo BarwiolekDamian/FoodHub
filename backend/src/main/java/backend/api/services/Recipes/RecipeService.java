@@ -6,6 +6,7 @@ import backend.api.services.Users.*;
 import backend.api.repositories.Recipes.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import java.util.NoSuchElementException;
 
@@ -30,6 +31,16 @@ public class RecipeService
             return repoResponse.get();
         else
             throw new NoSuchElementException("INVALID RECIPE: '" + recipeId + "'");
+    }
+
+    public List<Recipe> getRecipesByUserAndAccessLevel(Integer userId, RecipeAccess accessLevel)
+    {
+        List<Recipe> repoResponse = recipeRepository.findByUserIdAndRecipeAccess(userId, accessLevel);
+
+        if(!repoResponse.isEmpty())
+            return repoResponse;
+        else
+            throw new NoSuchElementException("EMPTY COLLECTION: 'Recipe'");
     }
 
     @Transactional

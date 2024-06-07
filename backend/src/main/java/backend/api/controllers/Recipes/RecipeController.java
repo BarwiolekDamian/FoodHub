@@ -3,7 +3,9 @@ package backend.api.controllers.Recipes;
 import backend.api.models.Recipes.*;
 import backend.api.services.Recipes.*;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +25,12 @@ public class RecipeController
     public ResponseEntity<Recipe> getRecipeById(@PathVariable Integer recipeId)
     {
         return ResponseEntity.ok(recipeService.getRecipeById(recipeId));
+    }
+
+    @GetMapping("/get/all/user/{userId}/access/{recipeAccess}")
+    public ResponseEntity<List<Recipe>> getRecipesByUserAndAccessLevel(@PathVariable Integer userId, @PathVariable RecipeAccess recipeAccess)
+    {
+        return ResponseEntity.ok(recipeService.getRecipesByUserAndAccessLevel(userId, recipeAccess));
     }
 
     @PostMapping("/add")
